@@ -1,20 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import Car from "./src/components/Car";
-import Search from "./src/components/Search";
-import { log } from "console";
+import Form from "./components/form";
 
 export default function App() {
-  const handleSearch = (text: string) => {
-    console.log(text);
-  };
-
   return (
     <View style={styles.container}>
-      <Search handleSearch={handleSearch} />
-      <Text>Cars List</Text>
+      <Form></Form>
       <StatusBar style="auto" />
-      <Car car="Funca" brand="VW" hp={150} />
     </View>
   );
 }
