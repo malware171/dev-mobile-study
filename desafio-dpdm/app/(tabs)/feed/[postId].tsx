@@ -2,8 +2,8 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { useLocalSearchParams } from "expo-router/build/hooks";
 
-export default function Post() {
-  const { postId, title, description, likes } = useLocalSearchParams();
+export default function PostId() {
+  const { title, description, likes } = useLocalSearchParams();
   return (
     <View style={styles.container}>
       <View style={styles.post}>
