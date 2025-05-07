@@ -1,8 +1,19 @@
 import { View, Text, StyleSheet } from "react-native";
 import React, { PropsWithChildren } from "react";
 
+interface CardProps {
+  image: string
+  title: string
+  subtitle: string
+  level: number
+  role: string
+
+}
+
 export default function Card({ children }: PropsWithChildren) {
-  return <View style={styles.container}>{children}</View>;
+  return(
+    <View style={styles.container}>{children}</View>
+  ) 
 }
 
 const styles = StyleSheet.create({

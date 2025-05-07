@@ -1,4 +1,4 @@
-import {View,Text,StatusBar,TouchableOpacity,StyleSheet,} from "react-native";
+import {View,Text,StatusBar,TouchableOpacity,StyleSheet, ScrollView,} from "react-native";
 import React, { PropsWithChildren, ReactNode } from "react";
 import { Stack } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -9,7 +9,7 @@ type ScreenWrapperProps = {
 
 export default function ScreenWrapper({ title, children }: ScreenWrapperProps) {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <StatusBar barStyle="light-content" />
       <Stack.Screen
         options={{
@@ -25,7 +25,7 @@ export default function ScreenWrapper({ title, children }: ScreenWrapperProps) {
         }}
       />
       {children}
-    </View>
+    </ScrollView>
   );
 }
 

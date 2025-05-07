@@ -16,24 +16,28 @@ export default function MainCard({title, participating, imgUrl, name, hp, damage
   return (
     <Card>
       <View style={styles.container}>
-        <Text>{title}</Text>
-        <Text>{participating}/10 Participating</Text>
+        <View style = {styles.containerCenter}>
+          <Text>{title}</Text>
+          <Text style= {styles.subtitle}>{participating}/10 Participating</Text>
+        </View>
+        
 
-        <Image source={{ uri: imgUrl }} width={100} height={100} />
+        <Image source={{ uri: imgUrl }} width={150} height={150} />
 
         <View style={styles.statsContainer}>
           <View style={styles.icon}>
-            <MaterialCommunityIcons name="sword" size={24} color="black" />
+            <MaterialCommunityIcons name="sword" size={35} color="black" />
           </View>
-
+          
           <View style={styles.statsRight}>
             <Text>{name}</Text>
 
             <View style={styles.barContainer}>
-              <View style={{ ...styles.bar, width: "80%" }} />
+              <View style={{ ...styles.bar2, width: "85%" }} />
+              <View style={{ ...styles.bar, width: "70%" }} />
             </View>
 
-            <Text>{hp} / 1500 HP</Text>
+            <Text style= {styles.subtitle}>{hp} / 1500 HP</Text>
           </View>
         </View>
 
@@ -50,12 +54,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 16,
   },
+  containerCenter: {
+    alignItems: "center",
+  },
   statsContainer: {
     flexDirection: "row",
     width: "100%",
   },
   statsRight: {
     flex: 1,
+    gap: 5
   },
   icon: {
     justifyContent: "center",
@@ -75,18 +83,28 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     position: "absolute",
   },
+  bar2: {
+    backgroundColor: "orange",
+    height: 8,
+    borderRadius: 4,
+    position: "absolute",
+  },
+  subtitle: {
+    color: "rgb(159 155 167)",
+  },
   footer: {
     backgroundColor: "rgb(255 166 36)",
     width: "100%",
     color: "white",
     alignContent: "center",
     alignItems: "center",
-    padding: 5,
+    padding: 8,
     borderBottomStartRadius: 10,
     borderBottomRightRadius: 10
   },
   footerText: {
     color: "white",
+    fontSize: 12
 
   },
 });
