@@ -9,11 +9,12 @@ export default function index() {
   return (
     <View style = {styles.container}>
       <View style = {styles.backgroundContainer}>
-         <LoginTitle title='Login'subtitle='Não tem uma conta ?'>
+         <LoginTitle title='Criar conta'subtitle='Ja possui uma conta ?'>
             <Link href={"/createAccountPage/createAccount"} style = { styles.link}>Criar Conta</Link>
          </LoginTitle>
          <Input placeholder='username'/>
          <Input placeholder='password'/>
+         <Input placeholder='confirm password'/>
          <Button title='Log In'></Button>
       </View>
     </View>
